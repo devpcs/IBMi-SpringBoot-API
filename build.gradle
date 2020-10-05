@@ -5,6 +5,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'docker'
 
 group = 'com.barrettotte'
 version = '0.0.1-SNAPSHOT'
@@ -38,6 +39,14 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    
+    buildscript {
+    repositories { mavenCentral() }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.1'
+    }
+    }
+
 }
 
 sourceSets {
