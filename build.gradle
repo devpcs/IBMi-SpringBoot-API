@@ -46,7 +46,10 @@ dependencies {
         classpath 'se.transmode.gradle:gradle-docker:1.1'
     }
     }
+}
 
+distDocker {
+    exposePort 8080
 }
 
 sourceSets {
